@@ -37,7 +37,7 @@ app.post('/pago', async (req, res) => {
     const sendingWalletAddress = await client.walletAddress.get({
     
             //la del que paga (cliente/usuario).
-        url:"https://ilp.interledger-test.dev/johana"
+        url:'https://' + wallet
             } ); 
     
             //la del que cobra (empresa/servicio).
@@ -87,7 +87,7 @@ app.post('/pago', async (req, res) => {
           incomingAmount: {
             assetCode: receivingwalletAddress.assetCode,
             assetScale: receivingwalletAddress.assetScale,
-            value: "10",
+            value: "monto",
           },
         }
       );
